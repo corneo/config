@@ -1,4 +1,4 @@
-This 'package' is used to build a 'secrets.env' file for subsequent loading into the environment (env) as necessary.
+This repository is intended to build a 'secrets.env' file for subsequent loading into the environment (env) as necessary.
 
 Typically things like passwords and WiFi SSID's are contained in the file.
 
