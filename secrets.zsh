@@ -5,13 +5,13 @@
 sev_dir=config
 sev_dir_path=$HOME/$sev_dir
 file_root=$sev_dir/secrets
-tpl_file=$file_root.tpl
+tpl_file=$file_root.template
 tpl_path=$HOME/$tpl_file
 env_file=$file_root.env
 env_path=$HOME/$env_file
 
 if ! test -r "$env_path" ; then
-  # See if the SEV template file (~/.secrets.tpl) exists. If so, use it to
+  # See if the SEV template file (~/.secrets.template) exists. If so, use it to
   # create the .env file with the help of the 1Password command line
   # interface (CLI) command, "op inject ...".  When that command is invoked
   # 1Pasword will authenticate the user executing this script.  See the
@@ -21,7 +21,7 @@ if ! test -r "$env_path" ; then
   # for creating this script was to minimize how often that happens.  The
   # other was to avoid the inherent delay introduced by doing ao.)
   #
-  # Make sure .secrets.tpl exists.
+  # Make sure .secrets.template exists.
   if test -r "$tpl_path"; then
     # The template file eists so let's do this thing..
     echo "Creating $env_path"
@@ -38,7 +38,7 @@ if ! test -r "$env_path" ; then
   fi
 
   # For some reason I do not understand, environment variables
-  # loaded by this script, well, they're not.  It works if they'rr
+  # loaded by this script, well, they're not.  It works if they're
   # loaded by .zprofile so it is done there after invoking this
   # script.  Hence the following lines have been commented out
   #
